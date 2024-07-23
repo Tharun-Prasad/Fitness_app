@@ -1,0 +1,66 @@
+.progress-container {
+    margin: 20px;
+    color: whitesmoke;
+}
+
+.greeting {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    font-size: 6rem;
+  
+  }
+  
+  .hello {
+    
+    color: #6489ff;
+    margin-right: 10px;
+  }
+  
+  .name {
+    
+    color: #e57373;
+  }
+  .progress-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px white;
+}
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+}
+.progress {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    height: 100%;
+    border-radius: 25px;
+    transition: width 1s ease-in-out;
+}
+
+.quotes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 500px;
+    height: 350px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px white;
+    transition: 1s;
+    flex-wrap: nowrap;
+    display: inline-flex;
+}
+
+.desc {
+    text-align: center;
+}

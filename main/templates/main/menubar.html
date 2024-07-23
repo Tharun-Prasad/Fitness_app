@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menubar</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menubar_style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+
+</head>
+<body>
+    <div class="navbar">
+        <button class="menu-btn" onclick="openNav()">☰</button>
+    </div>
+    
+    <div id="sideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'dashboard' %}">dashboard</a>
+        <a href="{% url 'goal' %}">Goal</a>
+        <a href="{% url 'workout' %}">Workout</a>
+        <a href="{% url 'measurement' %}">Measurements</a>
+        <a href="{% url 'logout' %}">logout</a>
+    </div>
+    
+</body>
+</html>

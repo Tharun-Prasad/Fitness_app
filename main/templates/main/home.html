@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Collapsed Items</title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+    {% comment %} <link rel="icon" href="favicon.ico" type="image/x-icon" src='{% static "main/css/body.jpg" %}' /> {% endcomment %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/includemenubar.js' %}"></script>
+</head>
+<body>
+   
+{% include "main/menubar.html" %}  
+  <div>
+    {% block content %}
+    
+    <div class="greeting">
+        <span class="hello">Hello,</span>
+        <span class="name">{{user.username}}</span>
+      </div>
+      <div class="question">How can I help you today?</div>
+    <div class="card-container">
+      <div class="card">
+        <div class="desc">
+            <h2 class="quotes">"It is a shame for a man to grow old without seeing the 
+                beauty and strength of which his body is capable"</h2>
+            <h3 class="quotes">- Socrates</h3>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="desc">
+            <h2 class="quotes">“I don't stop when I'm tired. I stop when I'm done”</h2>
+            <h3 class="quotes">-David Goggins</h3>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="desc">
+            <h2 class="quotes">Explore your Strength by Registering here -></h2>
+            <a href="{% url "goal" %}"><button id="submit">Let's go</button></a>
+
+        </div>
+      </div>
+    </div>
+    {% endblock content %}
+
+  </div>
+   
+</body>
+</html>

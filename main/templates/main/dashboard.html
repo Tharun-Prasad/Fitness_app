@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard_style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/includemenubar.js' %}"></script>
+</head>
+<body>
+   
+{% include "main/menubar.html" %}  
+<div>
+    {% block content %}
+    
+    <div class="greeting">
+        <span class="hello">Hello,</span>
+        <span class="name">{{ user.username }}</span>
+    </div>
+    <div class="progress-container">
+        <h2>Your Progress</h2>
+        <div class="progress-card">
+            <h2>Current Plan: {{ context.user_progress.unique_title_days.title }} - {{ context.user_progress.unique_title_days.days }} days</h2>
+            <p>Days Completed: {{ context.user_progress.no_days }}</p>
+            <p>Days Remaining:  {{ context.remaining_days }}</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:{{ context.progress }}%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="quotes-container">
+
+        <div class="card">
+            <div class="desc">
+                <h2 class="quotes">Continue with the plan -> </h2>
+                <a href="{% url 'body_exercise' %}"><button id="submit">Let's go</button></a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</div>
+   
+</body>
+</html>

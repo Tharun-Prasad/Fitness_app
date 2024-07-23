@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal</title>
+    <!-- Remove the incorrect link tag -->
+    <!-- <link rel="stylesheet" href="goal_style.css"> -->
+    <!-- Correct link tag using Django's static template tag -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/goal_style.css' %}">
+    <script src="{% static 'main/js/includemenubar.js' %}"></script>
+    <script src="{% static 'main/js/script.js' %}"></script>
+</head>
+<body>
+    {% include "main/menubar.html" %} 
+    {% block content %}
+    <h1 id="option">
+        Choose your plan
+    </h1>
+    <div class="card-container">
+        <div class="card">
+          <div class="desc">
+              <h1 class="quotes">Let's lose some weight</h1>
+              <a href="{% url 'measurement' %}"><button class="submit">Let's go</button></a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="desc">
+              <h1 class="quotes">Let's gain some weight</h1>
+              <a href="{% url 'measurement' %}"><button class="submit">Let's go</button></a>
+          </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+    background: url('bgcol.jpg');
+    background-size: cover; /* Ensure background covers the whole screen */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Optional: Set a default font */
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    align-items: center; /* Center cards vertically if container height is set */
+    flex-wrap: wrap;
+    gap: 30px; /* Space between cards */
+    margin-top: 89px;
+}
+
+.card {
+    width: 350px;
+    height: 400px; /* Increased height to accommodate content */
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px white;
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px whitesmoke;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    max-height: 50%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.desc a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.desc a button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ffa2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px; /* Space above the button */
+    width: 50%; /* Button width */
+}
+
+.desc a button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}

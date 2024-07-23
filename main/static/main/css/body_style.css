@@ -1,0 +1,48 @@
+body{
+    background: url('bgcol.jpg');
+}
+
+.card-container{
+    display: flex;
+    margin-top: 89px;
+    margin-left: 125px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 350px;
+    height: 350px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px white;
+    transition: 1s;
+}
+/* .desc{
+    padding: 0 1px 0 1px;
+
+} */
+.stopwatch{
+    padding-top: 1.5px ;
+ }
+.quotes{
+    padding: 2%;
+    color: white;
+}
+.card:hover{
+    box-shadow: 0 8px 16px whitesmoke;
+}
+#title{
+    color:white;
+    text-align: center;
+}
+
+img{
+    width:100%;
+    border-radius: 5px 5px 0 0;
+    max-height: 70%; /* This ensures the image occupies up to half the card's height */
+    object-fit: cover;
+
+
+}

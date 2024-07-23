@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body-Weight Exercise</title>
+    <link rel="stylesheet" href="{% static 'main/css/body_style.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'main/css/stopstyle.css' %}"> {% endcomment %}
+</head>
+<body>
+    {% include "main/menubar.html" %} 
+    <h1 id="title">Different Exercises</h1>
+    <div class="card-container">
+        {% for workout in workouts %}
+        <div class="card">
+            <div>
+                <img src="{{ workout.image.url }}" alt="{{ workout.name }}">
+
+                <div class="stopwatch" style="position: relative;">
+                    <h2 class="quotes" style="display: inline-block;">{{ workout.name }}</h2>
+                    <div class="display" style="display: inline-block; color: aliceblue;">00:00:00</div>
+                    <button class="startStop">Start</button>
+                    <button class="reset">Reset</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+       
+        <!-- Add more cards as necessary -->
+    </div>
+    <script src="{% static 'main/js/stopscript.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/includemenubar.js' %}"></script>
+</body>
+</html>

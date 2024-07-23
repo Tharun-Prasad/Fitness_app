@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/measurement_style.css' %}">
+</head>
+<body>
+    {% include "main/menubar.html" %}
+    <div>
+        {% block content %}
+        <div class="total">
+            <div class="container">
+                <h1>Measurements</h1>
+                <form method="POST" id="bmiForm">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn">Calculate BMI</button>
+                </form>
+                <div id="result"></div>
+            </div>
+        </div>
+        <a href="{% url 'workout' %}"><button class="proceed">Proceed</button></a>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/includemenubar.js' %}"></script>
+        {% comment %} <script src="{% static 'js/measurement_script.js' %}"></script> {% endcomment %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

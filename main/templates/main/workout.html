@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout</title>
+    <link rel="stylesheet" type="text/css" href="/static/main/css/workout_style.css">
+</head>
+<body>
+    
+{% include "main/menubar.html" %}
+
+<div>
+    <h2>Choose your way of Workout</h2>
+</div>
+
+<div class="card-container">
+    {% for workout in workout_plans %}
+    <div class="card">
+        <img src="{{ workout.image.url }}" alt="{{ workout.title }}">
+        <div class="desc">
+            <h2>{{workout.days}}days {{workout.title}}</h2>
+            <a href="/body_exercise"><button id="submit" >Go</button></a>
+        </div>
+    </div>
+    {% comment %} <div class="card">
+        <img src="/static/main/css/weighted.jpg" alt="Weighted Training">
+        <div class="desc">
+            <h2>30 DAY PLAN</h2>
+            <button id="submit" onclick="handleClick('30 days', '{{ user_progress|escapejs }}')">Go</button>
+        </div>
+    </div> {% endcomment %}
+    {% endfor %}
+</div>
+
+<script src="/static/js/script.js"></script>
+<script src="/static/js/includemenubar.js"></script>
+<script src="/static/js/track.js"></script>
+
+</body>
+</html>
